@@ -1,0 +1,30 @@
+
+FILE_NAME: model
+NET_NAME: MonitorMultiparametric_instSpec
+
+
+Simulation parameters:
+
+  - Min number of replications  1000
+  - Max number of replications  1000000
+  - Confidence level  99.00%
+  - Half-lenght confidence interval  10.00%
+
+  - Random number generator seeds:  6657
+
+STUDY_NAME: DefaultStudy 
+
+Variables Setting:
+  Time = {8640.0}
+
+
+ VARIABLE CASE #0:
+
+
+ Computation time (real):	0 h : 0 m : 6 s.
+ CPU time (user):		0 h : 0 m : 5 s. 
+
+ Rew measure:
+
+ -> MonitorMultiParametric  1.038536e-02	 [ 9.350276e-03 , 1.142044e-02 ]  (Half-lenght confidence interval = 9.97%) (Number of samples: 51900)
+
