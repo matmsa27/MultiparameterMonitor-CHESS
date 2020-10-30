@@ -25,16 +25,16 @@
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.filters_xft_SignalAmplifiedIn.failure" Source="MultiparameterMonitor.ecg.amplifier_SignalAmplifiedOut.failure"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.filters_xft_VoltageIn.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.filters_xft_VoltageIn.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.filters_ift" Destination="MultiparameterMonitor.ecg.filters_e_SignalFilteredOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.ecg.filters_ift" Name="MultiparameterMonitor.ecg.filters_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.1/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ecg.filters_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.filters_xft_SignalAmplifiedIn.failure MultiparameterMonitor.ecg.filters_xft_VoltageIn.omission" Destination="MultiparameterMonitor.ecg.filters_e_SignalFilteredOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.filters_xft_SignalAmplifiedIn.failure OR MultiparameterMonitor.ecg.filters_xft_VoltageIn.omission)" Name="MultiparameterMonitor.ecg.filters_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.filters_xft_SignalAmplifiedIn.failure MultiparameterMonitor.ecg.filters_xft_VoltageIn.failure" Destination="MultiparameterMonitor.ecg.filters_e_SignalFilteredOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.filters_xft_SignalAmplifiedIn.failure OR MultiparameterMonitor.ecg.filters_xft_VoltageIn.failure)" Name="MultiparameterMonitor.ecg.filters_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.1/@FaultsGeneratesErrors.1">
           <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.1/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.filters_xft_SignalAmplifiedIn.failure"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.1/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.filters_xft_VoltageIn.omission"/>
+          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.1/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.filters_xft_VoltageIn.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
       <ErrorsGeneratesFailures Name="MultiparameterMonitor.ecg.filters_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.ecg.filters_e_SignalFilteredOut" Source="MultiparameterMonitor.ecg.filters_e_SignalFilteredOut" Destination="MultiparameterMonitor.ecg.filters_SignalFilteredOut.failure">
@@ -50,16 +50,16 @@
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.amplifier_xft_SignalElectrodeIn.failure" Source="MultiparameterMonitor.ecg.electrodes_SignalBioElectricOut.failure"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.amplifier_ift" Destination="MultiparameterMonitor.ecg.amplifier_e_SignalAmplifiedOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.ecg.amplifier_ift" Name="MultiparameterMonitor.ecg.amplifier_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.2/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ecg.amplifier_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.amplifier_xft_SignalElectrodeIn.failure MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.omission" Destination="MultiparameterMonitor.ecg.amplifier_e_SignalAmplifiedOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.amplifier_xft_SignalElectrodeIn.failure OR MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.omission)" Name="MultiparameterMonitor.ecg.amplifier_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.amplifier_xft_SignalElectrodeIn.failure MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.failure" Destination="MultiparameterMonitor.ecg.amplifier_e_SignalAmplifiedOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.amplifier_xft_SignalElectrodeIn.failure OR MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.failure)" Name="MultiparameterMonitor.ecg.amplifier_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.2/@FaultsGeneratesErrors.1">
           <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.2/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.amplifier_xft_SignalElectrodeIn.failure"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.2/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.omission"/>
+          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.2/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.amplifier_xft_VoltageIn.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
       <ErrorsGeneratesFailures Name="MultiparameterMonitor.ecg.amplifier_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.ecg.amplifier_e_SignalAmplifiedOut" Source="MultiparameterMonitor.ecg.amplifier_e_SignalAmplifiedOut" Destination="MultiparameterMonitor.ecg.amplifier_SignalAmplifiedOut.failure">
@@ -77,16 +77,16 @@
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.converter_xft_SignalFilteredIn.failure" Source="MultiparameterMonitor.ecg.filters_SignalFilteredOut.failure"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.converter_xft_VoltageIn.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.converter_xft_VoltageIn.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.converter_ift" Destination="MultiparameterMonitor.ecg.converter_e_HeartRate MultiparameterMonitor.ecg.converter_e_RespiratoryFrequency" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.ecg.converter_ift" Name="MultiparameterMonitor.ecg.converter_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.3/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ecg.converter_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.converter_xft_SignalFilteredIn.failure MultiparameterMonitor.ecg.converter_xft_VoltageIn.omission" Destination="MultiparameterMonitor.ecg.converter_e_HeartRate MultiparameterMonitor.ecg.converter_e_RespiratoryFrequency" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.converter_xft_SignalFilteredIn.failure OR MultiparameterMonitor.ecg.converter_xft_VoltageIn.omission)" Name="MultiparameterMonitor.ecg.converter_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.converter_xft_SignalFilteredIn.failure MultiparameterMonitor.ecg.converter_xft_VoltageIn.failure" Destination="MultiparameterMonitor.ecg.converter_e_HeartRate MultiparameterMonitor.ecg.converter_e_RespiratoryFrequency" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.converter_xft_SignalFilteredIn.failure OR MultiparameterMonitor.ecg.converter_xft_VoltageIn.failure)" Name="MultiparameterMonitor.ecg.converter_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.3/@FaultsGeneratesErrors.1">
           <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.3/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.converter_xft_SignalFilteredIn.failure"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.3/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.converter_xft_VoltageIn.omission"/>
+          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.3/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.converter_xft_VoltageIn.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
       <ErrorsGeneratesFailures Name="MultiparameterMonitor.ecg.converter_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.ecg.converter_e_HeartRate" Source="MultiparameterMonitor.ecg.converter_e_HeartRate" Destination="MultiparameterMonitor.ecg.converter_HeartRate.failure">
@@ -105,16 +105,16 @@
         <Occurrence xsi:type="Exponential" Rate="1.57688E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part1_xft_voltage_in.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part1_xft_voltage_in.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part1_xft_signal_in.failure" Source="MultiparameterMonitor.ecg.electrodes_SignalBioElectricOut.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part1_ift" Destination="MultiparameterMonitor.ecg.part1_e_signal_out" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.ecg.part1_ift" Name="MultiparameterMonitor.ecg.part1_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.4/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ecg.part1_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part1_xft_voltage_in.omission MultiparameterMonitor.ecg.part1_xft_signal_in.failure" Destination="MultiparameterMonitor.ecg.part1_e_signal_out" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.part1_xft_voltage_in.omission OR MultiparameterMonitor.ecg.part1_xft_signal_in.failure)" Name="MultiparameterMonitor.ecg.part1_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part1_xft_voltage_in.failure MultiparameterMonitor.ecg.part1_xft_signal_in.failure" Destination="MultiparameterMonitor.ecg.part1_e_signal_out" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.part1_xft_voltage_in.failure OR MultiparameterMonitor.ecg.part1_xft_signal_in.failure)" Name="MultiparameterMonitor.ecg.part1_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.4/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.4/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part1_xft_voltage_in.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.4/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part1_xft_voltage_in.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.4/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part1_xft_signal_in.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -130,16 +130,16 @@
         <Occurrence xsi:type="Exponential" Rate="1.57688E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part2_xft_voltage_in.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part2_xft_voltage_in.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part2_xft_signal_in.failure" Source="MultiparameterMonitor.ecg.part3_flowport3.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part2_ift" Destination="MultiparameterMonitor.ecg.part2_e_rate_out" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.ecg.part2_ift" Name="MultiparameterMonitor.ecg.part2_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.5/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ecg.part2_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part2_xft_voltage_in.omission MultiparameterMonitor.ecg.part2_xft_signal_in.failure" Destination="MultiparameterMonitor.ecg.part2_e_rate_out" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.part2_xft_voltage_in.omission OR MultiparameterMonitor.ecg.part2_xft_signal_in.failure)" Name="MultiparameterMonitor.ecg.part2_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part2_xft_voltage_in.failure MultiparameterMonitor.ecg.part2_xft_signal_in.failure" Destination="MultiparameterMonitor.ecg.part2_e_rate_out" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.part2_xft_voltage_in.failure OR MultiparameterMonitor.ecg.part2_xft_signal_in.failure)" Name="MultiparameterMonitor.ecg.part2_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.5/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.5/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part2_xft_voltage_in.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.5/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part2_xft_voltage_in.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.5/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part2_xft_signal_in.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -156,16 +156,16 @@
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part3_xft_signal_in.failure" Source="MultiparameterMonitor.ecg.part1_signal_out.failure"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part3_xft_flowport2.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ecg.part3_xft_flowport2.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part3_ift" Destination="MultiparameterMonitor.ecg.part3_e_flowport3" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.ecg.part3_ift" Name="MultiparameterMonitor.ecg.part3_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.6/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ecg.part3_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part3_xft_signal_in.failure MultiparameterMonitor.ecg.part3_xft_flowport2.omission" Destination="MultiparameterMonitor.ecg.part3_e_flowport3" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.part3_xft_signal_in.failure OR MultiparameterMonitor.ecg.part3_xft_flowport2.omission)" Name="MultiparameterMonitor.ecg.part3_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ecg.part3_xft_signal_in.failure MultiparameterMonitor.ecg.part3_xft_flowport2.failure" Destination="MultiparameterMonitor.ecg.part3_e_flowport3" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ecg.part3_xft_signal_in.failure OR MultiparameterMonitor.ecg.part3_xft_flowport2.failure)" Name="MultiparameterMonitor.ecg.part3_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.6/@FaultsGeneratesErrors.1">
           <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.6/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part3_xft_signal_in.failure"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.6/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part3_xft_flowport2.omission"/>
+          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.6/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ecg.part3_xft_flowport2.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
       <ErrorsGeneratesFailures Name="MultiparameterMonitor.ecg.part3_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.ecg.part3_e_flowport3" Source="MultiparameterMonitor.ecg.part3_e_flowport3" Destination="MultiparameterMonitor.ecg.part3_flowport3.failure">
@@ -228,16 +228,16 @@
         <Occurrence xsi:type="Exponential" Rate="1.57688E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.amplifier_xft_LightIN.failure" Source="MultiparameterMonitor.pulseoximeter.PhotoReceptor_LightCaptured.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.amplifier_ift" Destination="MultiparameterMonitor.pulseoximeter.amplifier_e_Voltage5VOut MultiparameterMonitor.pulseoximeter.amplifier_e_LightCapturedOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.pulseoximeter.amplifier_ift" Name="MultiparameterMonitor.pulseoximeter.amplifier_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.9/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.pulseoximeter.amplifier_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.omission MultiparameterMonitor.pulseoximeter.amplifier_xft_LightIN.failure" Destination="MultiparameterMonitor.pulseoximeter.amplifier_e_Voltage5VOut MultiparameterMonitor.pulseoximeter.amplifier_e_LightCapturedOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.omission OR MultiparameterMonitor.pulseoximeter.amplifier_xft_LightIN.failure)" Name="MultiparameterMonitor.pulseoximeter.amplifier_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.failure MultiparameterMonitor.pulseoximeter.amplifier_xft_LightIN.failure" Destination="MultiparameterMonitor.pulseoximeter.amplifier_e_Voltage5VOut MultiparameterMonitor.pulseoximeter.amplifier_e_LightCapturedOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.failure OR MultiparameterMonitor.pulseoximeter.amplifier_xft_LightIN.failure)" Name="MultiparameterMonitor.pulseoximeter.amplifier_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.9/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.9/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.9/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.amplifier_xft_VoltageIN.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.9/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.amplifier_xft_LightIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -258,16 +258,16 @@
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.filters_xft_LightIN.failure" Source="MultiparameterMonitor.pulseoximeter.amplifier_LightCapturedOut.failure"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.filters_ift" Destination="MultiparameterMonitor.pulseoximeter.filters_e_LightOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.pulseoximeter.filters_ift" Name="MultiparameterMonitor.pulseoximeter.filters_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.10/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.pulseoximeter.filters_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.filters_xft_LightIN.failure MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.omission" Destination="MultiparameterMonitor.pulseoximeter.filters_e_LightOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.pulseoximeter.filters_xft_LightIN.failure OR MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.omission)" Name="MultiparameterMonitor.pulseoximeter.filters_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.filters_xft_LightIN.failure MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.failure" Destination="MultiparameterMonitor.pulseoximeter.filters_e_LightOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.pulseoximeter.filters_xft_LightIN.failure OR MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.failure)" Name="MultiparameterMonitor.pulseoximeter.filters_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.10/@FaultsGeneratesErrors.1">
           <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.10/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.filters_xft_LightIN.failure"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.10/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.omission"/>
+          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.10/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.filters_xft_VoltageDCIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
       <ErrorsGeneratesFailures Name="MultiparameterMonitor.pulseoximeter.filters_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.pulseoximeter.filters_e_LightOut" Source="MultiparameterMonitor.pulseoximeter.filters_e_LightOut" Destination="MultiparameterMonitor.pulseoximeter.filters_LightOut.failure">
@@ -282,16 +282,16 @@
         <Occurrence xsi:type="Exponential" Rate="1.57688E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.pulseoximeter.converter_xft_LightIN.failure" Source="MultiparameterMonitor.pulseoximeter.filters_LightOut.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.converter_ift" Destination="MultiparameterMonitor.pulseoximeter.converter_e_SignalOximeterDigital" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.pulseoximeter.converter_ift" Name="MultiparameterMonitor.pulseoximeter.converter_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.11/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.pulseoximeter.converter_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.omission MultiparameterMonitor.pulseoximeter.converter_xft_LightIN.failure" Destination="MultiparameterMonitor.pulseoximeter.converter_e_SignalOximeterDigital" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.omission OR MultiparameterMonitor.pulseoximeter.converter_xft_LightIN.failure)" Name="MultiparameterMonitor.pulseoximeter.converter_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.failure MultiparameterMonitor.pulseoximeter.converter_xft_LightIN.failure" Destination="MultiparameterMonitor.pulseoximeter.converter_e_SignalOximeterDigital" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.failure OR MultiparameterMonitor.pulseoximeter.converter_xft_LightIN.failure)" Name="MultiparameterMonitor.pulseoximeter.converter_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.11/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.11/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.11/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.converter_xft_VoltageDCIN.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.11/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.pulseoximeter.converter_xft_LightIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -330,16 +330,16 @@
         <Occurrence xsi:type="Exponential" Rate="1.57688E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.amplifier_xft_SignalIN.failure" Source="MultiparameterMonitor.thermometer.SensorPTC_SignalOut.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.amplifier_ift" Destination="MultiparameterMonitor.thermometer.amplifier_e_Voltage5vOut MultiparameterMonitor.thermometer.amplifier_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.thermometer.amplifier_ift" Name="MultiparameterMonitor.thermometer.amplifier_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.13/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.thermometer.amplifier_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.omission MultiparameterMonitor.thermometer.amplifier_xft_SignalIN.failure" Destination="MultiparameterMonitor.thermometer.amplifier_e_Voltage5vOut MultiparameterMonitor.thermometer.amplifier_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.omission OR MultiparameterMonitor.thermometer.amplifier_xft_SignalIN.failure)" Name="MultiparameterMonitor.thermometer.amplifier_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.failure MultiparameterMonitor.thermometer.amplifier_xft_SignalIN.failure" Destination="MultiparameterMonitor.thermometer.amplifier_e_Voltage5vOut MultiparameterMonitor.thermometer.amplifier_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.failure OR MultiparameterMonitor.thermometer.amplifier_xft_SignalIN.failure)" Name="MultiparameterMonitor.thermometer.amplifier_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.13/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.13/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.13/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.amplifier_xft_VoltageDCIN.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.13/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.amplifier_xft_SignalIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -359,16 +359,16 @@
         <Occurrence xsi:type="Exponential" Rate="5.787E-5"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.filter_xft_VoltageIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.filter_xft_VoltageIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.filter_xft_SignalIN.failure" Source="MultiparameterMonitor.thermometer.amplifier_SignalOut.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.filter_ift" Destination="MultiparameterMonitor.thermometer.filter_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.thermometer.filter_ift" Name="MultiparameterMonitor.thermometer.filter_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.14/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.thermometer.filter_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.filter_xft_VoltageIN.omission MultiparameterMonitor.thermometer.filter_xft_SignalIN.failure" Destination="MultiparameterMonitor.thermometer.filter_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.thermometer.filter_xft_VoltageIN.omission OR MultiparameterMonitor.thermometer.filter_xft_SignalIN.failure)" Name="MultiparameterMonitor.thermometer.filter_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.filter_xft_VoltageIN.failure MultiparameterMonitor.thermometer.filter_xft_SignalIN.failure" Destination="MultiparameterMonitor.thermometer.filter_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.thermometer.filter_xft_VoltageIN.failure OR MultiparameterMonitor.thermometer.filter_xft_SignalIN.failure)" Name="MultiparameterMonitor.thermometer.filter_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.14/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.14/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.filter_xft_VoltageIN.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.14/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.filter_xft_VoltageIN.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.14/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.filter_xft_SignalIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -385,16 +385,16 @@
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.converter_xft_SignalIN.failure" Source="MultiparameterMonitor.thermometer.filter_SignalOut.failure"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.converter_xft_VoltageIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.thermometer.converter_xft_VoltageIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.converter_ift" Destination="MultiparameterMonitor.thermometer.converter_e_DigitalTemp" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.thermometer.converter_ift" Name="MultiparameterMonitor.thermometer.converter_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.15/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.thermometer.converter_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.converter_xft_SignalIN.failure MultiparameterMonitor.thermometer.converter_xft_VoltageIN.omission" Destination="MultiparameterMonitor.thermometer.converter_e_DigitalTemp" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.thermometer.converter_xft_SignalIN.failure OR MultiparameterMonitor.thermometer.converter_xft_VoltageIN.omission)" Name="MultiparameterMonitor.thermometer.converter_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.thermometer.converter_xft_SignalIN.failure MultiparameterMonitor.thermometer.converter_xft_VoltageIN.failure" Destination="MultiparameterMonitor.thermometer.converter_e_DigitalTemp" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.thermometer.converter_xft_SignalIN.failure OR MultiparameterMonitor.thermometer.converter_xft_VoltageIN.failure)" Name="MultiparameterMonitor.thermometer.converter_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.15/@FaultsGeneratesErrors.1">
           <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.15/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.converter_xft_SignalIN.failure"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.15/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.converter_xft_VoltageIN.omission"/>
+          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.15/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.thermometer.converter_xft_VoltageIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
       <ErrorsGeneratesFailures Name="MultiparameterMonitor.thermometer.converter_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.thermometer.converter_e_DigitalTemp" Source="MultiparameterMonitor.thermometer.converter_e_DigitalTemp" Destination="MultiparameterMonitor.thermometer.converter_DigitalTemp.failure">
@@ -432,16 +432,16 @@
         <Occurrence xsi:type="Exponential" Rate="1.57688E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.amplifier_xft_SignalIN.failure" Source="MultiparameterMonitor.bloodpressure.sensor_SignalCaptured.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.amplifier_ift" Destination="MultiparameterMonitor.bloodpressure.amplifier_e_Voltage5VOut MultiparameterMonitor.bloodpressure.amplifier_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.bloodpressure.amplifier_ift" Name="MultiparameterMonitor.bloodpressure.amplifier_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.17/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.bloodpressure.amplifier_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.omission MultiparameterMonitor.bloodpressure.amplifier_xft_SignalIN.failure" Destination="MultiparameterMonitor.bloodpressure.amplifier_e_Voltage5VOut MultiparameterMonitor.bloodpressure.amplifier_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.omission OR MultiparameterMonitor.bloodpressure.amplifier_xft_SignalIN.failure)" Name="MultiparameterMonitor.bloodpressure.amplifier_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.failure MultiparameterMonitor.bloodpressure.amplifier_xft_SignalIN.failure" Destination="MultiparameterMonitor.bloodpressure.amplifier_e_Voltage5VOut MultiparameterMonitor.bloodpressure.amplifier_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.failure OR MultiparameterMonitor.bloodpressure.amplifier_xft_SignalIN.failure)" Name="MultiparameterMonitor.bloodpressure.amplifier_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.17/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.17/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.17/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.amplifier_xft_VoltageIN.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.17/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.amplifier_xft_SignalIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -461,16 +461,16 @@
         <Occurrence xsi:type="Exponential" Rate="5.787E-5"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.filter_xft_SignalIN.failure" Source="MultiparameterMonitor.bloodpressure.amplifier_SignalOut.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.filter_ift" Destination="MultiparameterMonitor.bloodpressure.filter_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.bloodpressure.filter_ift" Name="MultiparameterMonitor.bloodpressure.filter_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.18/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.bloodpressure.filter_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.omission MultiparameterMonitor.bloodpressure.filter_xft_SignalIN.failure" Destination="MultiparameterMonitor.bloodpressure.filter_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.omission OR MultiparameterMonitor.bloodpressure.filter_xft_SignalIN.failure)" Name="MultiparameterMonitor.bloodpressure.filter_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.failure MultiparameterMonitor.bloodpressure.filter_xft_SignalIN.failure" Destination="MultiparameterMonitor.bloodpressure.filter_e_SignalOut" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.failure OR MultiparameterMonitor.bloodpressure.filter_xft_SignalIN.failure)" Name="MultiparameterMonitor.bloodpressure.filter_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.18/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.18/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.18/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.filter_xft_VoltageIN.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.18/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.filter_xft_SignalIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -488,16 +488,16 @@
         <Occurrence xsi:type="Exponential" Rate="1.57688E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.bloodpressure.converter_xft_SignalIN.failure" Source="MultiparameterMonitor.bloodpressure.filter_SignalOut.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.converter_ift" Destination="MultiparameterMonitor.bloodpressure.converter_e_BloodPressureInvasive MultiparameterMonitor.bloodpressure.converter_e_NonInvasiveBloodPressure" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.bloodpressure.converter_ift" Name="MultiparameterMonitor.bloodpressure.converter_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.19/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.bloodpressure.converter_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.omission MultiparameterMonitor.bloodpressure.converter_xft_SignalIN.failure" Destination="MultiparameterMonitor.bloodpressure.converter_e_BloodPressureInvasive MultiparameterMonitor.bloodpressure.converter_e_NonInvasiveBloodPressure" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.omission OR MultiparameterMonitor.bloodpressure.converter_xft_SignalIN.failure)" Name="MultiparameterMonitor.bloodpressure.converter_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.failure MultiparameterMonitor.bloodpressure.converter_xft_SignalIN.failure" Destination="MultiparameterMonitor.bloodpressure.converter_e_BloodPressureInvasive MultiparameterMonitor.bloodpressure.converter_e_NonInvasiveBloodPressure" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.failure OR MultiparameterMonitor.bloodpressure.converter_xft_SignalIN.failure)" Name="MultiparameterMonitor.bloodpressure.converter_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.19/@FaultsGeneratesErrors.1">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.19/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.omission"/>
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.19/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.converter_xft_VoltageIN.failure"/>
           <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.19/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.bloodpressure.converter_xft_SignalIN.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
@@ -515,7 +515,7 @@
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_SignalOximeter.failure" Source="MultiparameterMonitor.pulseoximeter.converter_SignalOximeterDigital.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_SignalThermometer.failure" Source="MultiparameterMonitor.thermometer.converter_DigitalTemp.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_SignalResp.failure" Source="MultiparameterMonitor.bloodpressure.converter_BloodPressureInvasive.failure"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_VoltageIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_VoltageIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_RespiratoryFrequency.failure" Source="MultiparameterMonitor.ecg.converter_RespiratoryFrequency.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_NonInvasiveBP.failure" Source="MultiparameterMonitor.bloodpressure.converter_NonInvasiveBloodPressure.failure"/>
       <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.cpu_xft_rate_in.failure" Source="MultiparameterMonitor.ecg.part2_rate_out.failure"/>
@@ -527,14 +527,14 @@
         <Occurrence xsi:type="Exponential" Rate="1.0E-20"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.omission" Source="MultiparameterMonitor.ps_control_out.omission"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.failure" Source="MultiparameterMonitor.ps_control_out.failure"/>
       <FaultsGeneratesErrors Source="MultiparameterMonitor.monitorlcd_ift" Destination="MultiparameterMonitor.monitorlcd_e_StreamOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.monitorlcd_ift" Name="MultiparameterMonitor.monitorlcd_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
         <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.21/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.monitorlcd_ift"/>
       </FaultsGeneratesErrors>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.omission" Destination="MultiparameterMonitor.monitorlcd_e_StreamOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.omission" Name="MultiparameterMonitor.monitorlcd_fge_2">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.failure" Destination="MultiparameterMonitor.monitorlcd_e_StreamOut" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.failure" Name="MultiparameterMonitor.monitorlcd_fge_2">
         <ActivationDelay xsi:type="Deterministic"/>
-        <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.21/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.omission"/>
+        <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.21/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.monitorlcd_xft_VoltageDCIN.failure"/>
       </FaultsGeneratesErrors>
       <ErrorsGeneratesFailures Name="MultiparameterMonitor.monitorlcd_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.monitorlcd_e_StreamOut" Source="MultiparameterMonitor.monitorlcd_e_StreamOut" Destination="MultiparameterMonitor.monitorlcd_StreamOut.failure">
         <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.21/@ErrorsGeneratesFailures.0" Error="MultiparameterMonitor.monitorlcd_e_StreamOut"/>
@@ -542,78 +542,59 @@
       </ErrorsGeneratesFailures>
     </components>
     <components Name="MultiparameterMonitor.power_supply">
-      <FailureModes Name="MultiparameterMonitor.power_supply_out.omission"/>
-      <Errors Name="MultiparameterMonitor.power_supply_PowerSupplyFault"/>
-      <Errors Name="MultiparameterMonitor.power_supply_LackOfEnergy"/>
-      <Errors Name="MultiparameterMonitor.power_supply_Choice1"/>
-      <Faults xsi:type="InternalFault" Name="MultiparameterMonitor.power_supply_ift_1" PermanentProbability="1.0">
+      <FailureModes Name="MultiparameterMonitor.power_supply_out.failure"/>
+      <Errors Name="MultiparameterMonitor.power_supply_e_out"/>
+      <Faults xsi:type="InternalFault" Name="MultiparameterMonitor.power_supply_ift" PermanentProbability="1.0">
         <Occurrence xsi:type="Exponential" Rate="2.31481E-4"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.power_supply_ift_1" Destination="MultiparameterMonitor.power_supply_PowerSupplyFault" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.power_supply_ift_1" Name="MultiparameterMonitor.power_supply_fge_1">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.power_supply_ift" Destination="MultiparameterMonitor.power_supply_e_out" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.power_supply_ift" Name="MultiparameterMonitor.power_supply_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
-        <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.22/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.power_supply_ift_1"/>
+        <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.22/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.power_supply_ift"/>
       </FaultsGeneratesErrors>
-      <ErrorsGeneratesFailures Name="MultiparameterMonitor.power_supply_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.power_supply_PowerSupplyFault" Source="MultiparameterMonitor.power_supply_PowerSupplyFault" Destination="MultiparameterMonitor.power_supply_out.omission">
-        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.22/@ErrorsGeneratesFailures.0" Error="MultiparameterMonitor.power_supply_PowerSupplyFault"/>
+      <ErrorsGeneratesFailures Name="MultiparameterMonitor.power_supply_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.power_supply_e_out" Source="MultiparameterMonitor.power_supply_e_out" Destination="MultiparameterMonitor.power_supply_out.failure">
+        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.22/@ErrorsGeneratesFailures.0" Error="MultiparameterMonitor.power_supply_e_out"/>
         <PropagationDelay xsi:type="Deterministic"/>
       </ErrorsGeneratesFailures>
     </components>
     <components Name="MultiparameterMonitor.battery">
-      <FailureModes Name="MultiparameterMonitor.battery_out.omission"/>
-      <FailureModes Name="MultiparameterMonitor.battery_out.valueSubtle"/>
-      <Errors Name="MultiparameterMonitor.battery_BatteryFault"/>
-      <Errors Name="MultiparameterMonitor.battery_LackOfCharge"/>
-      <Errors Name="MultiparameterMonitor.battery_Choice1"/>
-      <Faults xsi:type="InternalFault" Name="MultiparameterMonitor.battery_ift_1" PermanentProbability="1.0">
+      <FailureModes Name="MultiparameterMonitor.battery_out.failure"/>
+      <Errors Name="MultiparameterMonitor.battery_e_out"/>
+      <Faults xsi:type="InternalFault" Name="MultiparameterMonitor.battery_ift" PermanentProbability="1.0">
         <Occurrence xsi:type="Exponential" Rate="5.787E-5"/>
         <TransientDuration xsi:type="Deterministic"/>
       </Faults>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.battery_ift_1" Destination="MultiparameterMonitor.battery_Choice1" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.battery_ift_1" Name="MultiparameterMonitor.battery_fge_1">
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.battery_ift" Destination="MultiparameterMonitor.battery_e_out" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.battery_ift" Name="MultiparameterMonitor.battery_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
-        <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.23/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.battery_ift_1"/>
+        <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.23/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.battery_ift"/>
       </FaultsGeneratesErrors>
-      <InternalPropagation Name="MultiparameterMonitor.battery_intprop_2" PropagationLogicStringFormat="MultiparameterMonitor.battery_Choice1" Source="MultiparameterMonitor.battery_Choice1" Destination="MultiparameterMonitor.battery_BatteryFault" PropagationProbability="1.0" Weight="0.4">
-        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.23/@InternalPropagation.0" Error="MultiparameterMonitor.battery_Choice1"/>
-        <PropagationDelay xsi:type="Deterministic"/>
-      </InternalPropagation>
-      <InternalPropagation Name="MultiparameterMonitor.battery_intprop_3" PropagationLogicStringFormat="MultiparameterMonitor.battery_Choice1" Source="MultiparameterMonitor.battery_Choice1" Destination="MultiparameterMonitor.battery_LackOfCharge" PropagationProbability="1.0" Weight="0.6">
-        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.23/@InternalPropagation.1" Error="MultiparameterMonitor.battery_Choice1"/>
-        <PropagationDelay xsi:type="Deterministic"/>
-      </InternalPropagation>
-      <ErrorsGeneratesFailures Name="MultiparameterMonitor.battery_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.battery_BatteryFault" Source="MultiparameterMonitor.battery_BatteryFault" Destination="MultiparameterMonitor.battery_out.omission">
-        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.23/@ErrorsGeneratesFailures.0" Error="MultiparameterMonitor.battery_BatteryFault"/>
-        <PropagationDelay xsi:type="Deterministic"/>
-      </ErrorsGeneratesFailures>
-      <ErrorsGeneratesFailures Name="MultiparameterMonitor.battery_epf_2" PropagationLogicStringFormat="MultiparameterMonitor.battery_LackOfCharge" Source="MultiparameterMonitor.battery_LackOfCharge" Destination="MultiparameterMonitor.battery_out.valueSubtle">
-        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.23/@ErrorsGeneratesFailures.1" Error="MultiparameterMonitor.battery_LackOfCharge"/>
+      <ErrorsGeneratesFailures Name="MultiparameterMonitor.battery_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.battery_e_out" Source="MultiparameterMonitor.battery_e_out" Destination="MultiparameterMonitor.battery_out.failure">
+        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.23/@ErrorsGeneratesFailures.0" Error="MultiparameterMonitor.battery_e_out"/>
         <PropagationDelay xsi:type="Deterministic"/>
       </ErrorsGeneratesFailures>
     </components>
     <components Name="MultiparameterMonitor.ps_control">
-      <FailureModes Name="MultiparameterMonitor.ps_control_out.omission"/>
-      <Errors Name="MultiparameterMonitor.ps_control_BatteryFault"/>
-      <Errors Name="MultiparameterMonitor.ps_control_NoEnergyAvailable"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ps_control_xft_in2.omission" Source="MultiparameterMonitor.battery_out.omission"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ps_control_xft_in2.valueSubtle" Source="MultiparameterMonitor.battery_out.valueSubtle"/>
-      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ps_control_xft_in1.omission" Source="MultiparameterMonitor.power_supply_out.omission"/>
-      <FaultsGeneratesErrors Source="MultiparameterMonitor.ps_control_xft_in2.omission MultiparameterMonitor.ps_control_xft_in2.valueSubtle" Destination="MultiparameterMonitor.ps_control_BatteryFault" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ps_control_xft_in2.omission OR MultiparameterMonitor.ps_control_xft_in2.valueSubtle)" Name="MultiparameterMonitor.ps_control_fge_1">
+      <FailureModes Name="MultiparameterMonitor.ps_control_out.failure"/>
+      <Errors Name="MultiparameterMonitor.ps_control_e_out"/>
+      <Faults xsi:type="InternalFault" Name="MultiparameterMonitor.ps_control_ift" PermanentProbability="1.0">
+        <Occurrence xsi:type="Exponential" Rate="2.31481E-4"/>
+        <TransientDuration xsi:type="Deterministic"/>
+      </Faults>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ps_control_xft_in2.failure" Source="MultiparameterMonitor.battery_out.failure"/>
+      <Faults xsi:type="ExternalFault" Name="MultiparameterMonitor.ps_control_xft_in1.failure" Source="MultiparameterMonitor.power_supply_out.failure"/>
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ps_control_ift" Destination="MultiparameterMonitor.ps_control_e_out" PropagationProbability="1.0" PropagationLogicStringFormat="MultiparameterMonitor.ps_control_ift" Name="MultiparameterMonitor.ps_control_fge_1">
         <ActivationDelay xsi:type="Deterministic"/>
-        <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.24/@FaultsGeneratesErrors.0">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.24/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ps_control_xft_in2.omission"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.24/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ps_control_xft_in2.valueSubtle"/>
+        <PropagationLogic xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.24/@FaultsGeneratesErrors.0" Fault="MultiparameterMonitor.ps_control_ift"/>
+      </FaultsGeneratesErrors>
+      <FaultsGeneratesErrors Source="MultiparameterMonitor.ps_control_xft_in2.failure MultiparameterMonitor.ps_control_xft_in1.failure" Destination="MultiparameterMonitor.ps_control_e_out" PropagationProbability="1.0" PropagationLogicStringFormat="(MultiparameterMonitor.ps_control_xft_in2.failure OR MultiparameterMonitor.ps_control_xft_in1.failure)" Name="MultiparameterMonitor.ps_control_fge_2">
+        <ActivationDelay xsi:type="Deterministic"/>
+        <PropagationLogic xsi:type="FaultsExpressionOrNode" faultsGenerateErrors="/0/@components.24/@FaultsGeneratesErrors.1">
+          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.24/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ps_control_xft_in2.failure"/>
+          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" faultsGenerateErrors="/0/@components.24/@FaultsGeneratesErrors.1" Fault="MultiparameterMonitor.ps_control_xft_in1.failure"/>
         </PropagationLogic>
       </FaultsGeneratesErrors>
-      <InternalPropagation Name="MultiparameterMonitor.ps_control_intprop_2" PropagationLogicStringFormat="MultiparameterMonitor.ps_control_BatteryFault" Source="MultiparameterMonitor.ps_control_BatteryFault" Destination="MultiparameterMonitor.ps_control_NoEnergyAvailable" PropagationProbability="1.0">
-        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.24/@InternalPropagation.0" Error="MultiparameterMonitor.ps_control_BatteryFault"/>
-        <FaultGuard xsi:type="FaultsExpressionOrNode">
-          <FaultsExpression1 xsi:type="FaultsExpressionFaultNode" Fault="MultiparameterMonitor.ps_control_xft_in1.omission"/>
-          <FaultsExpression2 xsi:type="FaultsExpressionFaultNode" Fault="MultiparameterMonitor.ps_control_xft_in1.omission"/>
-        </FaultGuard>
-        <PropagationDelay xsi:type="Deterministic"/>
-      </InternalPropagation>
-      <ErrorsGeneratesFailures Name="MultiparameterMonitor.ps_control_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.ps_control_NoEnergyAvailable" Source="MultiparameterMonitor.ps_control_NoEnergyAvailable" Destination="MultiparameterMonitor.ps_control_out.omission">
-        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.24/@ErrorsGeneratesFailures.0" Error="MultiparameterMonitor.ps_control_NoEnergyAvailable"/>
+      <ErrorsGeneratesFailures Name="MultiparameterMonitor.ps_control_epf_1" PropagationLogicStringFormat="MultiparameterMonitor.ps_control_e_out" Source="MultiparameterMonitor.ps_control_e_out" Destination="MultiparameterMonitor.ps_control_out.failure">
+        <PropagationLogic xsi:type="ErrorsExpressionErrorNode" errorPropagation="/0/@components.24/@ErrorsGeneratesFailures.0" Error="MultiparameterMonitor.ps_control_e_out"/>
         <PropagationDelay xsi:type="Deterministic"/>
       </ErrorsGeneratesFailures>
     </components>
