@@ -1,6 +1,6 @@
 
 FILE_NAME: model
-NET_NAME: MonitorMultiparametric_instSpec
+NET_NAME: MultiparameterMonitor_instSpec
 
 
 Simulation parameters:
@@ -15,16 +15,16 @@ Simulation parameters:
 STUDY_NAME: DefaultStudy 
 
 Variables Setting:
-  Time = {2160.0}
+  Time = {17280.0}
 
 
  VARIABLE CASE #0:
 
 
- Computation time (real):	0 h : 0 m : 0 s.
- CPU time (user):		0 h : 0 m : 0 s. 
+ Computation time (real):	0 h : 0 m : 1 s.
+ CPU time (user):		0 h : 0 m : 1 s. 
 
  Rew measure:
 
- -> MonitorMultiParametric  9.543000e-01	 [ 9.494423e-01 , 9.591577e-01 ]  (Half-lenght confidence interval = 0.51%) (Number of samples: 10000)
+ -> MonitorMultiParametric  4.539000e-01	 [ 4.423190e-01 , 4.654810e-01 ]  (Half-lenght confidence interval = 2.55%) (Number of samples: 10000)
 
